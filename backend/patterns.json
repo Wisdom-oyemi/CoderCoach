@@ -1,0 +1,86 @@
+[
+  {
+    "pattern": "Sliding Window",
+    "why": "A business wants to find its strongest seven-day sales period. Since the days must be consecutive, we can move a window through the daily sales.",
+    "hints": [
+      "Start by calculating the total sales for each seven-day period.",
+      "Notice that two neighboring periods share six days.",
+      "Can you subtract the day leaving the window and add the new day?",
+      "Move through the sales list and keep track of the highest total."
+    ],
+    "practice": [
+      "Business exercise: Find the best seven-day sales period",
+      "LeetCode: Maximum Average Subarray I"
+    ]
+  },
+  {
+    "pattern": "Two Pointers",
+    "why": "A company has a sorted list of equipment prices and wants to find two items whose total matches its budget.",
+    "hints": [
+      "You could check every pair, but that repeats a lot of work.",
+      "Start with the cheapest and most expensive items.",
+      "If the total is too high, move to a cheaper item on the right.",
+      "If the total is too low, move to a more expensive item on the left."
+    ],
+    "practice": [
+      "Business exercise: Find two equipment purchases that match a budget",
+      "LeetCode: Two Sum II - Input Array Is Sorted"
+    ]
+  },
+  {
+    "pattern": "Hash Map",
+    "why": "A store wants to count how many times each product appears in its sales records. A hash map can connect each product ID to its count.",
+    "hints": [
+      "What information do you need to remember for each product?",
+      "Use the product ID as the key and its sales count as the value.",
+      "When a product appears again, increase its count.",
+      "After checking all records, compare the counts to find the most frequently sold product."
+    ],
+    "practice": [
+      "Business exercise: Count sales by product ID",
+      "LeetCode: Top K Frequent Elements"
+    ]
+  },
+  {
+    "pattern": "Binary Search",
+    "why": "A company keeps invoice numbers in sorted order and wants to find a particular invoice without checking every record.",
+    "hints": [
+      "Make sure the invoice numbers are sorted first.",
+      "Compare the invoice you need with the middle invoice.",
+      "If your number is smaller, search the left half. If it is larger, search the right half.",
+      "Repeat until you find the invoice or there are no records left to search."
+    ],
+    "practice": [
+      "Business exercise: Find an invoice in a sorted list",
+      "LeetCode: Binary Search"
+    ]
+  },
+  {
+    "pattern": "Stack",
+    "why": "A financial spreadsheet editor needs an undo feature. The most recent change should be undone first, which fits a stack.",
+    "hints": [
+      "Think about the order in which changes should be undone.",
+      "Store each change along with the information needed to reverse it.",
+      "Add new changes to the top of a stack.",
+      "When the user selects undo, remove the top change and reverse it."
+    ],
+    "practice": [
+      "Business exercise: Build undo for spreadsheet edits",
+      "LeetCode: Min Stack"
+    ]
+  },
+  {
+    "pattern": "Dynamic Programming",
+    "why": "A business has a fixed budget and several projects with different costs and expected profits. It wants to choose the most profitable combination, with each project selected at most once.",
+    "hints": [
+      "Choosing only the project with the highest profit may miss a better combination.",
+      "For each project, consider both choices: select it or skip it.",
+      "Track the best profit for each budget using the projects considered so far.",
+      "Reuse those results when considering the next project, without counting the same project twice."
+    ],
+    "practice": [
+      "Business exercise: Select projects within a budget using 0/1 knapsack",
+      "LeetCode: Partition Equal Subset Sum"
+    ]
+  }
+]
