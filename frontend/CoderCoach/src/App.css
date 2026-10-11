@@ -1,0 +1,267 @@
+:root {
+  color-scheme: dark;
+  --bg: #0e0e10;
+  --surface: #1a1a1d;
+  --border: #34343a;
+  --text: #e8e8ea;
+  --muted: #9a9aa3;
+  --accent: #c9c9cf;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+
+#root {
+  max-width: none;
+  padding: 0;
+  text-align: left;
+}
+
+.app {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.topbar {
+  position: relative;
+  padding: 20px 0 12px;
+  text-align: center;
+}
+
+.eyebrow, .card-label {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.topbar h1 {
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+  font-size: 1.55rem;
+}
+
+.icons {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icon-btn, .hint-btn {
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.icon-btn:hover, .hint-btn:hover {
+  border-color: #6a6a73;
+  color: var(--text);
+}
+
+.main {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.welcome, .status {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.response-card, .error-state {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  padding: 20px;
+  text-align: left;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.confidence {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  padding: 5px 10px;
+  font-size: .75rem;
+  white-space: nowrap;
+}
+
+.why, .hint {
+  line-height: 1.55;
+}
+
+.why {
+  margin: 18px 0;
+  color: var(--text);
+}
+
+.hint-ladder {
+  display: grid;
+  gap: 10px;
+}
+
+.hint {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.hint span {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--text);
+  font-size: .75rem;
+}
+
+.hint-btn {
+  margin-top: 18px;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+.practice {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.practice ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.practice li + li {
+  margin-top: 6px;
+}
+
+.error-state {
+  color: var(--muted);
+  text-align: center;
+}
+
+.error-state p {
+  margin-top: 0;
+}
+
+.composer {
+  padding: 16px 0 24px;
+}
+
+.composer label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.composer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.composer-row:focus-within {
+  border-color: #6a6a73;
+}
+
+.composer-row input {
+  min-width: 0;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+}
+
+.composer-row input::placeholder {
+  color: #6f6f78;
+}
+
+.composer-row button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  background: var(--text);
+  color: var(--bg);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.composer-row button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+@media (max-width: 520px) {
+  .icons {
+    left: 4px;
+  }
+
+  .card-heading {
+    display: block;
+  }
+
+  .confidence {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
